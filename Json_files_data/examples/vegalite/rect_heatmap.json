@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "data": {
+    "url": "data/jsondata.json"
+  },
+  "mark": "rect",
+  "encoding": {
+    "y": {
+      "field": "region",
+      "type": "ordinal"
+    },
+    "x": {
+      "field": "relevance",
+      "type": "ordinal"
+    },
+    "color": {
+      "aggregate": "mean",
+      "field": "intensity",
+      "type": "quantitative"
+    }
+  }
+}

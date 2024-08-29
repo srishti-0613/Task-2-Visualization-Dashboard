@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "description": "A bar chart showing the US employer distribution of end_year in 2000.",
+  "data": {
+    "url": "data/jsondata.json"
+  },
+  "transform": [
+    {
+      "filter":"pestle == Economic"
+    }  
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "likelihood",
+      "type": "ordinal",
+      "scale": {
+        "rangeStep": 7
+      }
+    },
+    "x": {
+      "aggregate": "sum",
+      "field": "intensity",
+      "type": "quantitative",
+      "axis": {
+        "title": "likelihood"
+      }
+    }
+  }
+}

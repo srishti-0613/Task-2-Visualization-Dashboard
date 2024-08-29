@@ -1,0 +1,15 @@
+{
+  "description": "The data display  “response depends on explanatory variables”.",
+  "data": {"url": "data/jsondata.json"},
+  "mark": "point",
+  "encoding": {
+    "row": {"field": "sector", "type": "ordinal"},
+    "x": {"aggregate": "mean", "field": "intensity", "type": "quantitative"},
+    "y": {
+      "field": "pestle", "type": "ordinal",
+      "sort": {"field": "intensity","op": "mean"},
+      "scale": {"bandSize": 12}
+    },
+    "color": {"field": "start_year", "type": "nominal"}
+  }
+}

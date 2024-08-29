@@ -1,0 +1,62 @@
+{
+  "data": {"url": "data/jsondata.json"},
+  "transform": {"filter": "source == DOE EIA 2013 Energy Conference"},
+  "layers": [
+    {
+      "mark": "rule",
+      "encoding": {
+        "y": {"field": "relevance","type": "ordinal"},
+        "x": {
+          "aggregate": "min",
+          "field": "intensity",
+          "type": "quantitative",
+          "axis": {"title": "GivenData"}
+        },
+        "x2": {
+          "aggregate": "max",
+          "field": "intensity",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "tick",
+      "encoding": {
+        "y": {"field": "relevance","type": "ordinal"},
+        "x": {
+          "aggregate": "min",
+          "field": "intensity",
+          "type": "quantitative",
+          "axis": {"title": "GivenData"}
+        },
+        "size": {"value": 5}
+      }
+    },
+    {
+      "mark": "tick",
+      "encoding": {
+        "y": {"field": "relevance","type": "ordinal"},
+        "x": {
+          "aggregate": "max",
+          "field": "intensity",
+          "type": "quantitative",
+          "axis": {"title": "GivenData"}
+        },
+        "size": {"value": 5}
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "y": {"field": "relevance","type": "ordinal"},
+        "x": {
+          "aggregate": "mean",
+          "field": "intensity",
+          "type": "quantitative",
+          "axis": {"title": "GivenData"}
+        },
+        "size": {"value": 2}
+      }
+    }
+  ]
+}

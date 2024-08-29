@@ -1,0 +1,29 @@
+{
+  "data": { "url": "data/jsondata.json"},
+  "transform": {
+    "filter": "sector == Energy",
+    "calculate": [{"field": "Relevance", "expr": "datum.relevance == 4 ? \"RelevantYes\" : \"RelevantNo\""}]
+  },
+  "mark": "bar",
+  "encoding": {
+    "column": {
+      "field": "impact", "type": "ordinal",
+      "scale": {"padding": 4},
+      "axis": {"orient": "bottom", "axisWidth": 1, "offset": -8}
+    },
+    "y": {
+      "aggregate": "sum", "field": "likelihood", "type": "quantitative",
+      "axis": {"title": "Likely", "grid": false}
+    },
+    "x": {
+      "field": "Relevance", "type": "nominal",
+      "scale": {"bandSize": 6},
+      "axis": false
+    },
+    "color": {
+      "field": "Relevance", "type": "nominal",
+      "scale": {"range": ["#EA98D2", "#659CCA"]}
+    }
+  },
+  "config": {"facet": {"cell": {"strokeWidth": 0}}}
+}

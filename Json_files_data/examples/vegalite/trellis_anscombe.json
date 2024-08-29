@@ -1,0 +1,18 @@
+{
+  "data": {"url": "data/jsondata.json"},
+  "mark": "circle",
+  "encoding": {
+    "column": {"field": "pestle", "type": "nominal"},
+    "x": {
+      "field": "relevance",
+      "type": "quantitative",
+      "scale": {"null": false}
+    },
+    "y": {
+      "field": "impact",
+      "type": "quantitative",
+      "scale": {"null": false}
+    }
+  },
+  "config": {"mark": {"opacity": 1}}
+}
